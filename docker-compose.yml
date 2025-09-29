@@ -14,10 +14,10 @@ services:
     image: containrrr/watchtower
     container_name: watchtower
     restart: unless-stopped
+    user: root
     command: --cleanup --interval 300 school_nginx
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    # profiles: ["prod"]
     networks:
       - webnet
 
